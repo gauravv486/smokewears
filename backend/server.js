@@ -23,15 +23,15 @@ app.use("/api/users", authRouter);
 app.use("/api/product", productRouter);
 app.use("/api/cart", cartRouter);
 
-app.get("/" , (req , res)=>{
+app.get("/", (req, res) => {
   res.redirect(process.env.NEXT_PUBLIC_FRONTEND_URL)
 })
 
 // Export app for serverless, but also support local dev
 export default app;
 
-if (process.env.NODE_ENV !== 'production') {
-  await connectDB();
-  const port = process.env.PORT || 5000;
-  app.listen(port, () => console.log(`server is running on ${port}`));
-}
+
+await connectDB();
+const port = process.env.PORT || 5000;
+app.listen(port, () => console.log(`server is running on ${port}`));
+
