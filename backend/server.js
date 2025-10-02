@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-  origin: ["http://localhost:5173"],
+  origin: ["http://localhost:5173" ,"https://smokewears.onrender.com"],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true
 }));
@@ -27,7 +27,6 @@ app.get("/", (req, res) => {
   res.redirect(process.env.NEXT_PUBLIC_FRONTEND_URL)
 })
 
-// Export app for serverless, but also support local dev
 export default app;
 
 
