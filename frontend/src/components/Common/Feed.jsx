@@ -12,7 +12,9 @@ const Feed = () => {
     const fetchProducts = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/product/feed`);
+        const response = await fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/product/feed` , {
+          credentials: "include",
+        });
         // const response = await fetch("https://smokewears.onrender.com/api/product/feed");
         console.log(response);
         const data = await response.json();

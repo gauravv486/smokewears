@@ -16,6 +16,7 @@ const SearchFeed = () => {
                 const response = await fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/product/search`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
+                    credentials: "include", 
                     body: JSON.stringify({ searchText: q })
                 })
                 const data = await response.json();

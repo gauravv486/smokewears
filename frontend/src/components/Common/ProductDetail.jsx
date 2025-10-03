@@ -18,7 +18,9 @@ const ProductDetail = () => {
         const fetchProduct = async () => {
             try {
                 setLoading(true);
-                const response = await fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/product/` + productId);
+                const response = await fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/product/` + productId , {
+                    credentials: "include",
+                });
                 const data = await response.json();
                 setProduct(data.product);
             } catch (error) {

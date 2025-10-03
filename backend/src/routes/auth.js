@@ -33,9 +33,13 @@ router.post("/signup", async (req, res) => {
 
         const token = generateToken(email);
 
-        res.cookie("token", token, {
-            maxAge: 7 * 24 * 60 * 60 * 1000
-        })
+        res.cookie('token', token, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production', // true for HTTPS production
+            sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax',
+            maxAge: 7 * 24 * 60 * 60 * 1000,
+            path: '/',
+        });
 
         res.status(201).json({
             success: true,
@@ -78,9 +82,16 @@ router.post("/login", async (req, res) => {
         }
 
         const token = generateToken(email);
-        res.cookie("token", token, {
-            maxAge: 7 * 24 * 60 * 60 * 1000
-        })
+
+        res.cookie('token', token, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production', // true for HTTPS production
+            sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax',
+            maxAge: 7 * 24 * 60 * 60 * 1000,
+            path: '/',
+        });
+
+        console.log(token)
 
         res.status(201).json({
             success: true,

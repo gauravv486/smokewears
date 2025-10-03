@@ -64,6 +64,7 @@ router.post("/create", isAutherized, async (req, res) => {
 router.get("/feed", async (req, res) => {
     try {
         const products = await Product.find({});
+        console.log("product showing");
         res.status(200).json({
             success: true,
             products: products

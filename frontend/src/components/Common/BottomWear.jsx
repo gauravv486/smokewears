@@ -12,7 +12,9 @@ const BottomWear = () => {
     const fetchMenCollection = async () => {
       try {
         setLoading(true);
-        const resposnse = await fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/product/bottom-wear`);
+        const resposnse = await fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/product/bottom-wear`, {
+          credentials: "include",
+        });
         const data = await resposnse.json();
         setProducts(data.products);
         setError(null);

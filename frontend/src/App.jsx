@@ -37,22 +37,22 @@ function App() {
         { path: "/bottomwear", element: <BottomWear /> },
         {
           path: "/cart", element:
-            <PrivateRoute>
+          
               <CartPage />
-            </PrivateRoute>
+            
         },
         { path: "/feed", element: <Feed /> },
         {
           path: "/product/:productId", element:
-            <PrivateRoute>
+            
               <ProductDetail />
-            </PrivateRoute>
+           
         },
         {
           path: "/search", element:
-            <PrivateRoute>
+            
               <SearchFeed />
-            </PrivateRoute>
+            
         }
       ]
     },

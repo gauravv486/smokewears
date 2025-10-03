@@ -12,7 +12,9 @@ const MenSection = () => {
     const fetchMenCollection = async () => {
       try {
         setLoading(true);
-        const resposnse = await fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/product/men`);
+        const resposnse = await fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/product/men` , {
+          credentials: "include",
+        });
         const data = await resposnse.json();
         setProducts(data.products);
         setError(null);
