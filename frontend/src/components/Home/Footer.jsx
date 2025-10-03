@@ -8,13 +8,13 @@ const Footer = () => {
         <div className="flex justify-between items-start mb-16">
           {/* Left - Brand */}
           <div className="w-1/3">
-            <h2 className="text-2xl font-bold mb-4 text-gray-300">RAWBLOX</h2>
+            <h2 className="text-2xl font-bold mb-4 text-gray-300">SMOKEWEARS</h2>
             <p className="text-gray-500 text-sm mb-4 max-w-xs">
               STREETWEAR FOR THE BOLD, BUILT FOR THE MOVEMENT.
             </p>
-            <p className="text-gray-500 text-sm mb-8 max-w-sm">
-              Inspired by the raw energy of the streets, we create statement pieces that blend style, attitude, and individuality.
-            </p>
+            {/* <p className="text-gray-500 text-sm mb-8 max-w-sm">
+              Inspired by the raw energy of the streets, we create statement pieces that blend attitude, and individuality.
+            </p> */}
             <p className="text-gray-500 text-xs">© 2025 Copyright</p>
           </div>
 

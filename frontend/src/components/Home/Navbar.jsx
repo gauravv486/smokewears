@@ -2,8 +2,11 @@ import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
 import { FiShoppingCart, FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 import { Link } from 'react-router-dom';
 import SearchBar from "./SearchBar";
+import Cookies from "js-cookie"
 
 const Navbar = () => {
+
+    const token = Cookies.get("token");
 
     return (
         <div className="w-full">
@@ -35,7 +38,7 @@ const Navbar = () => {
                     </div>
 
                     <div>
-                        <SearchBar/>
+                        <SearchBar />
                     </div>
 
                     {/* Desktop Navigation */}
@@ -56,6 +59,11 @@ const Navbar = () => {
                         <Link to="/cart">
                             <FiShoppingCart className="text-xl hover:text-gray-500 cursor-pointer transition-colors " />
                         </Link>
+
+                        <Link to="/login" className="hover:text-gray-600 transition-colors font-medium ">
+                            {token ? "Logout" : "Login"}
+                        </Link>
+
                     </div>
                 </div>
             </div>

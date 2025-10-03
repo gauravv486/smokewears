@@ -1,11 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const StreetWear = () => {
     return (
         <div className="mb-30 bg-white">
             {/* Header */}
             <div className="text-center pt-12 pb-8">
-                <h1 className="text-gray-600 text-lg">Streetwear with a Story</h1>
+                <h1 className="text-gray-600 text-xl font-bold">Streetwear with a Story</h1>
             </div>
 
             {/* Main Content */}
@@ -39,12 +40,14 @@ const StreetWear = () => {
 
                     {/* Button */}
                     <div>
-                        <button className="bg-black text-white px-8 py-4 rounded-full flex items-center gap-3 text-lg hover:bg-gray-800 transition-colors">
-                            Get it now
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
-                        </button>
+                        <Link to="/feed">
+                            <button className="bg-black text-white px-8 py-4 rounded-full flex items-center gap-3 text-lg hover:bg-gray-800 transition-colors">
+                                Get it now
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>

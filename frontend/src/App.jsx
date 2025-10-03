@@ -13,6 +13,7 @@ import ProductDetail from './components/Common/ProductDetail';
 import Signup from './components/Auth/Signup';
 import Login from './components/Auth/Login';
 import SearchFeed from './components/Common/SearchFeed';
+import PrivateRoute from './utils/PrivateRoute';
 
 function App() {
 
@@ -34,10 +35,25 @@ function App() {
         { path: "/women", element: <WomenSection /> },
         { path: "/topwear", element: <TopWear /> },
         { path: "/bottomwear", element: <BottomWear /> },
-        { path: "/cart", element: <CartPage /> },
+        {
+          path: "/cart", element:
+            <PrivateRoute>
+              <CartPage />
+            </PrivateRoute>
+        },
         { path: "/feed", element: <Feed /> },
-        { path: "/product/:productId", element: <ProductDetail /> },
-        { path: "/search", element: <SearchFeed /> }
+        {
+          path: "/product/:productId", element:
+            <PrivateRoute>
+              <ProductDetail />
+            </PrivateRoute>
+        },
+        {
+          path: "/search", element:
+            <PrivateRoute>
+              <SearchFeed />
+            </PrivateRoute>
+        }
       ]
     },
 
