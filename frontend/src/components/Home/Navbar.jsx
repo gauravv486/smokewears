@@ -7,6 +7,7 @@ import Cookies from "js-cookie"
 const Navbar = () => {
 
     const token = Cookies.get("token");
+    console.log(token);
 
     return (
         <div className="w-full">

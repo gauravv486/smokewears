@@ -22,10 +22,6 @@ app.use("/api/users", authRouter);
 app.use("/api/product", productRouter);
 app.use("/api/cart", cartRouter);
 
-app.get("/", (req, res) => {
-  res.redirect(process.env.NEXT_PUBLIC_FRONTEND_URL)
-})
-
 export default app;
 
 
